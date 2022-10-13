@@ -9,7 +9,9 @@ https://blog.jovian.ai/3-must-have-projects-for-your-data-science-portfolio-9cbd
 https://analyticsindiamag.com/how-to-build-a-data-science-portfolio-in-college/
 https://eugeneyan.com/writing/data-science-portfolio-how-why-what/
 https://www.reddit.com/r/datascience/comments/wajjgn/my_guide_to_building_a_strong_data_science/
-
+https://datatalks.club/podcast/s10e07-dataset-creation-and-curation.html
+https://github.com/alexeygrigorev/mlbookcamp-code/tree/master/course-zoomcamp
+https://a.omappapi.com/users/faf7bb73d598/images/edd0cee52f591665138653-MLDS-2023-different-size-1-02.jpg
 
 ejemplo un poquito mal echo, pero funcional
 https://sajalsharma.com/portfolio
@@ -118,3 +120,6 @@ https://www.youtube.com/playlist?list=PLoROMvodv4rPLKxIpqhjhPgdQy7imNkDn
 
 Social and Economic Networks: Models and Analysis
 https://www.coursera.org/learn/social-economic-networks
+
+
+					Computational Methods for Network Science (georgia tech path)
