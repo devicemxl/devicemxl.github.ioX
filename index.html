@@ -1,7 +1,750 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<head>
+    <link rel="preload" href="LeelawadeeUI.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="LeelawadeeUI.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="LeelawadeeUI-Semilight.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="LeelawadeeUI-Semilight.woff" as="font" type="font/woff" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <!-- SCROLLBAR STYLE-->
+
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px var(--AccentColor);
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: var(--A5);
+            box-shadow: inset 0 0 5px var(--DarkColor);
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--DarkColor);
+            box-shadow: inset 0 0 5px var(--AccentColor);
+        }
+    </style>
+
+    <style>
+        @font-face {
+            font-family: 'Leelawadee UI Semilight';
+            src: local('Leelawadee UI Semilight'), local('LeelawadeeUI-Semilight'),
+                url('LeelawadeeUI-Semilight.woff2') format('woff2'),
+                url('LeelawadeeUI-Semilight.woff') format('woff');
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'Leelawadee UI';
+            src: local('Leelawadee UI'), local('LeelawadeeUI'),
+                url('LeelawadeeUI.woff2') format('woff2'),
+                url('LeelawadeeUI.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @media (min-aspect-ratio: 101/100) {
+            :root {
+                --A0: hsl(210, 55%, 10%);
+                /* Backgroudcolor*/
+                --A9: hsl(210, 55%, 99%);
+                --A8: hsl(210, 60%, 95%);
+                --A7: hsl(210, 65%, 90%);
+                --A6: hsl(210, 70%, 85%);
+                --A5: hsl(210, 75%, 80%);
+                --A4: hsl(210, 80%, 75%);
+                --A3: hsl(210, 85%, 70%);
+                --A2: hsl(210, 90%, 65%);
+                --A1: hsl(210, 95%, 60%);
+                /* Backgroudcolor*/
+                --B1: hsl(215, 10%, 2%);
+                --B2: hsl(215, 20%, 10%);
+                /* B3 EDITADO PARA BAJAR AZUL */
+                --B3: hsl(216, 21%, 31%);
+                --B4: hsl(215, 40%, 32%);
+                --B5: hsl(215, 50%, 51%);
+                --B6: hsl(215, 60%, 65%);
+                --B7: hsl(215, 70%, 80%);
+                --B8: hsl(215, 80%, 87%);
+                --B9: hsl(215, 90%, 93%);
+                --B0: hsl(215, 100%, 99%);
+                --BackgroundColor: var(--B0);
+                --DarkColor: var(--B3);
+                --AccentColor: hsl(210, 86%, 67%);
+                /*hsl(200, 82%, 64%);*/
+                --LightFontColor: var(--BackgroundColor);
+                --DarkFontColor: var(--DarkColor);
+                /* ------ */
+                font-family: 'Leelawadee UI';
+                --limits: 5.21vw;
+                background-color: var(--BackgroundColor);
+                padding: 0;
+                border: 0;
+                margin: 0;
+                top: 0;
+                border-style: hidden;
+                border-color: transparent !important;
+                display: flexbox;
+                /* Tamaño base - proportion of 25px*/
+                font-size: 2.777vh;
+                color: var(--DarkFontColor);
+            }
+
+            /* Banda Superior */
+            .R01,
+            .R02 {
+                position: absolute;
+                width: 100%;
+                left: 0;
+            }
+
+            .R01 {
+                top: 0px;
+                height: 1rem;
+                font-size: 1rem;
+            }
+
+            .R02 {
+                top: 1rem;
+                height: 1.5rem;
+                background-color: var(--DarkColor);
+                border-bottom-color: var(--AccentColor);
+                border-bottom-width: 0.2rem;
+                border-bottom-style: solid;
+                vertical-align: middle;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-content: center;
+                justify-content: space-between;
+            }
+
+            .HiMaster {
+                font-family: 'Leelawadee UI Semilight';
+                font-weight: 100;
+                font-size: 0.6125rem;
+                color: var(--LightFontColor);
+                text-align: left;
+                position: relative;
+                top: 0.3rem;
+                padding-left: var(--limits);
+            }
+
+            .NavBarLinks {
+                font-family: 'Leelawadee UI Semilight';
+                font-weight: 100;
+                font-size: 0.6125rem;
+                color: var(--LightFontColor);
+                text-align: right;
+                position: relative;
+                top: 0.3rem;
+                padding-right: var(--limits);
+            }
+
+            /* Spacer */
+            .R03,
+            .R04,
+            .R05 {
+                position: fixed;
+                width: 100%;
+                left: 0;
+            }
+
+            .R03 {
+                top: 2.5rem;
+                height: 3rem;
+                font-size: 1rem;
+            }
+
+            .R04 {
+                top: 5.5rem;
+                height: 4rem;
+                font-size: 1rem;
+                display: flex;
+                align-items: flex-start;
+                flex-direction: row;
+                align-content: flex-start;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                padding-left: var(--limits);
+                padding-right: var(--limits);
+                width: calc(100% - calc(var(--limits)*2));
+            }
+
+            .R05 {
+                top: 10.5rem;
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                align-content: flex-start;
+                justify-content: center;
+                flex-wrap: nowrap;
+                padding-left: var(--limits);
+                padding-right: var(--limits);
+                width: calc(100% - calc(var(--limits)*2));
+            }
+
+            .BtnDiv {
+                height: 1rem;
+                /*width: 6rem;*/
+                display: flex;
+            }
+
+            .Please {
+                /* Geometry */
+                line-height: 1rem;
+                width: max-content;
+                height: max-content;
+                top: 0;
+                /* margins */
+                margin: 0;
+                padding-top: 0;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+                padding-top: 0;
+                /* colors */
+                background-color: var(--DarkColor);
+                border-color: transparent;
+                border-radius: 0.2rem;
+                /* fonts */
+                font-family: 'Leelawadee UI Semilight';
+                color: var(--LightFontColor);
+                font-size: 0.5rem;
+                letter-spacing: -0.1px;
+                text-transform: none;
+                text-align: center;
+                /* effects */
+                /*transition: none 0s ease 0s;*/
+                transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+            }
+
+            .Please:hover {
+                background-color: #fff;
+                border: 1px solid var(--AccentColor);
+                color: var(--AccentColor);
+                transform: scale(1.025);
+            }
+
+            .Hi {
+                color: var(--B6);
+                font-family: 'Leelawadee UI Semilight';
+                font-size: 1.5rem;
+            }
+
+            .Hi:hover {
+                opacity: 0.9;
+            }
+
+            .Name {
+                color: var(--AccentColor);
+                font-weight: 500;
+                font-size: 1.5rem;
+            }
+
+            .Name:hover {
+                color: var(--A6);
+            }
+
+            /* Portfolio Space*/
+            .MessageBox {
+                width: 20rem;
+                max-width: 21rem !important;
+                min-height: calc(calc(28/50) * 20rem) !important;
+                aspect-ratio: 55/35;
+                z-index: 100;
+                left: 1rem;
+                position: relative;
+                border-left-color: var(--AccentColor);
+                border-right-color: var(--AccentColor);
+                border-left-width: 0.5rem;
+                border-right-width: 0.5rem;
+                border-left-style: solid;
+                border-right-style: solid;
+                border-radius: 0.2rem;
+                background-color: var(--DarkColor);
+                /* ---- */
+                font-family: 'Leelawadee UI Semilight';
+                font-size: 2rem;
+                color: var(--LightFontColor);
+                /* ---- */
+                text-align: right;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-content: center;
+                justify-content: flex-end;
+                align-items: center;
+            }
+
+            .HiBuddy {
+                padding: 1rem;
+            }
+
+            .LetsText {
+                color: var(--A4);
+                font-weight: 100;
+            }
+
+            .DataText {
+                color: var(--B0);
+                font-weight: 500;
+            }
+
+            .ExamplesBox {
+                width: 55rem;
+                aspect-ratio: 127/60;
+                /*
+                border-color: black;
+                border-width: 2px;
+                border-style: solid;
+                */
+                z-index: 10;
+                right: 1rem;
+                position: relative;
+                display: inline-grid;
+                grid-template-rows: 1fr 1fr;
+                grid-template-columns: 1.6rem 3.56rem 5.2rem 9.2rem 11.36rem 13.55rem;
+                column-gap: 1rem;
+                row-gap: 1rem;
+                grid-template-areas:
+                    "A3 A4 A5 A6 A7 A8"
+                    "B3 B4 B5 B6 B7 B8";
+                font-size: 2.5rem;
+                text-align: right;
+                color: var(--A3);
+            }
+
+            .A3,
+            .A4,
+            .A5,
+            .A6,
+            .A7,
+            .A8,
+            .B3,
+            .B4,
+            .B5,
+            .B6,
+            .B7,
+            .B8 {
+                border-radius: 0.25rem;
+                padding-right: 0.5rem;
+                display: flex;
+                flex-direction: column;
+                flex-wrap: nowrap;
+                align-content: stretch;
+                justify-content: flex-start;
+                align-items: flex-end;
+            }
+
+            .B3,
+            .B4,
+            .B5,
+            .B6,
+            .B7,
+            .B8 {
+                opacity: 0.7;
+            }
+
+            .A8 {
+                background-color: var(--B9);
+            }
+
+            .A7 {
+                background-color: var(--B8);
+            }
+
+            .A6 {
+                background-color: var(--B7);
+            }
+
+            .A5 {
+                background-color: var(--B6);
+            }
+
+            .A4 {
+                background-color: var(--B5);
+            }
+
+            .A3 {
+                background-color: var(--B4);
+            }
+
+            .B8 {
+                background-color: var(--B9);
+            }
+
+            .B7 {
+                background-color: var(--B8);
+            }
+
+            .B6 {
+                background-color: var(--B7);
+            }
+
+            .B5 {
+                background-color: var(--B6);
+            }
+
+            .B4 {
+                background-color: var(--B5);
+            }
+
+            .B3 {
+                background-color: var(--B4);
+            }
+
+            .HiddenContent {
+                color: transparent;
+            }
+
+            .HiddenContent:hover {
+                color: var(--DarkFontColor);
+            }
+
+            .HiddenContent::selection {
+                color: var(--DarkFontColor);
+            }
+
+            .ProjectNumber {
+                font-size: 2.5rem;
+                text-align: right;
+                position: relative;
+                right: 0.2rem;
+                top: 0.5rem;
+
+            }
+
+            .RotatedText {
+                position: relative;
+                right: 0.2rem;
+                top: 0.5rem;
+                writing-mode: vertical-rl;
+                text-orientation: mixed;
+                font-size: 0.75rem;
+                text-align: start;
+                width: 2rem;
+                height: 7rem;
+            }
+
+            .Love {
+                position: absolute;
+                color: var(--B5);
+                font-weight: 100;
+                font-size: 0.35rem;
+                top: auto;
+                bottom: 1rem;
+                left: auto;
+                right: 4rem;
+            }
+        }
+    </style>
+
+    <!--
+    MODALS STYLING adapted from BY W3 SCHOOL
+-->
+    <script>
+        function LoadModal(ModalID) {
+            // Get the modal
+            var modal = document.getElementById(ModalID);
+            var span = document.getElementsByClassName("Close")[0];
+            // When the user clicks the button, open the modal 
+            modal.style.display = "block";
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1100;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100vw;
+            /* Full width */
+            height: 100vh;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80vw;
+            /* Full width */
+            height: 80vh;
+            /* Full height */
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        /* The Close Button */
+        .close {
+            color: transparent !important;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+    <!--modal toolbar-->
+    <style>
+        .ModalNavBar {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            margin: auto;
+            padding: 0px;
+            width: 80vw;
+            /*---*/
+            /*height: 1.5rem;*/
+            background-color: var(--DarkColor);
+            border-bottom-color: var(--AccentColor);
+            border-bottom-width: 0.2rem;
+            border-bottom-style: solid;
+            vertical-align: middle;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: space-between;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: transparent;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 0.5rem;
+            text-decoration: none;
+
+            font-family: 'Leelawadee UI Semilight';
+            color: var(--LightFontColor);
+            font-size: 0.5rem;
+        }
+
+        /* Change the link color to #111 (black) on hover */
+        ul a:hover {
+            background-color: #111;
+        }
+    </style>
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div class="R01"></div>
+    <div class="R02">
+        <div class="HiMaster">
+            Hi, I'm David
+        </div>
+        <div class="NavBarLinks">
+            Github | Medium | Books | Linkedin
+        </div>
+    </div>
+    <div class="R03">.</div>
+    <div class="R04">
+        <div class="HiBuddy">
+            <!--span class="Hi">Hi, I'm </span><a class="Name">David</a></p-->
+        </div>
+        <div class="BtnDiv">
+            <button class="Please">
+                <p>Contact me</p>
+            </button>
+        </div>
+    </div>
+    <div class="R05">
+        <div class="MessageBox" id="MessageBox">
+
+            <div class="HiBuddy">
+                <span class="LetsText">let the</span><a class="DataText"> Data</a><br>
+                <span class="LetsText">speack</span>
+            </div>
+        </div>
+        <div class="ExamplesBox">
+            <div class="A3"></div>
+            <div class="A4"></div>
+            <div class="A5 HiddenContent" onclick="LoadModal('Modal5')">
+                <span class="ProjectNumber">5</span>
+                <span class="RotatedText">Demand Forecast</span>
+            </div>
+            <div class="A6 HiddenContent" onclick="LoadModal('Modal6')">
+                <span class="ProjectNumber">6</span>
+                <span class="RotatedText">Geo-Market Segmentation</span>
+            </div>
+            <div class="A7 HiddenContent" onclick="LoadModal('Modal7')">
+                <span class="ProjectNumber">7</span>
+                <span class="RotatedText">Forecasting Real State Values</span>
+            </div>
+            <div class="A8 HiddenContent" onclick="LoadModal('Modal8')">
+                <span class="ProjectNumber">8</span>
+                <span class="RotatedText">Inventory Optimization</span>
+            </div>
+            <div class="B3"></div>
+            <div class="B4"></div>
+            <div class="B5 HiddenContent" onclick="LoadModal('Modal1')">
+                <span class="ProjectNumber">1</span>
+                <span class="RotatedText">File Classification</span>
+            </div>
+            <div class="B6 HiddenContent" onclick="LoadModal('Modal2')">
+                <span class="ProjectNumber">2</span>
+                <span class="RotatedText">Basket Analysis</span>
+            </div>
+            <div class="B7 HiddenContent" onclick="LoadModal('Modal3')">
+                <span class="ProjectNumber">3</span>
+                <span class="RotatedText">Loan Classification</span>
+            </div>
+            <div class="B8 HiddenContent" onclick="LoadModal('Modal4')">
+                <span class="ProjectNumber">4</span>
+                <span class="RotatedText">Text Distances</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="Love">
+        Made with ❤ By David Ochoa
+        <!--
+    UNA CLASE SE VE "IMAGEN" CON ESCALA AL 100%
+    OTRA ESTA OCULTA CON ESCALA AL 0% HASTA QUE SE PASA EL MOUSE "DETALLE" O SE DA CLICK
+    CUANDO PASA EL MOUSE ENCIMA DE DEJA QUE LOS DATOS HABLEN SE VEN TODOS LOS "DETALLE" O SE DA CLICK
+    CUANDO EL MOUSE SALE DE DEJA QUE LOS DATOS HABLEN SE OCULTAN TODOS LOS "DETALLE"
+-->
+    </div>
+    <!-- The Modals -->
+    <!-- Modal 8 -->
+    <div id="Modal8" class="modal">
+        <div class="ModalNavBar">
+            <ul>
+                <li><a href="#Modal8Home">Home</a></li>
+                <li><a href="https://example.org" target="_blank">Download Paper</a></li>
+                <li><a href="https://example.org" target="_blank">See Notebook</a></li>
+            </ul>
+        </div>
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+                <center id="Modal8Home">
+                    <h2>Inventory Optimization</h2>
+                </center>
+            <br>
+            <iframe src="https://example.org" title="iframe Example 1" width="100%" height="100%">
+            </iframe>
+        </div>
+    </div>
+    <!-- Modal 7 -->
+    <div id="Modal7" class="modal">
+        <span class="close">&times;</span>
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p>Some text in the Modal..</p>
+        </div>
+    </div>
+
+    </div>
+    <!-- Modal 6 -->
+    <div id="Modal6" class="modal">
+        <span class="close">&times;</span>
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p>Some text in the Modal..</p>
+        </div>
+    </div>
+    <!-- Modal 5 -->
+    <div id="Modal5" class="modal">
+        <span class="close">&times;</span>
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p>Some text in the Modal..</p>
+        </div>
+
+    </div>
+    <!-- Modal 4 -->
+    <div id="Modal4" class="modal">
+        <span class="close">&times;</span>
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p>Some text in the Modal..</p>
+        </div>
+
+    </div>
+    <!-- Modal 3 -->
+    <div id="Modal3" class="modal">
+        <span class="close">&times;</span>
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p>Some text in the Modal..</p>
+        </div>
+    </div>
+    <!-- Modal 2 -->
+    <div id="Modal2" class="modal">
+        <span class="close">&times;</span>
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p>Some text in the Modal..</p>
+        </div>
+    </div>
+    <!-- Modal 1 -->
+    <div id="Modal1" class="modal">
+        <span class="close">&times;</span>
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <p>Some text in the Modal..</p>
+        </div>
+    </div>
 </body>
+
 </html>
